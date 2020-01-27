@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Floating Lablels and other form styles">
+        <meta name="keywords" content="Form Styles,Forms,floating labels,float,labels">
+        <meta name="author" content="Trevor Fincher">
+
+    	<title>Label Floats</title>
+
+        <!-- Bootstrap -->
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather|Muli:300,500&display=swap" rel="stylesheet">
+
+    	<link rel="stylesheet" href="css/base.css" type="text/css" media="screen" />
+
+    </head>
+
+    <body>
+        <div class="container">
+            <section class="input">
+                <div class="number">1</div>
+                <div class="tan-box">
+                    <div>
+                        <p>
+                            Copy the code in the pink box for input fields
+                        </p>
+                        <span>•</span>
+                        <p>
+                            Text | Number<br />Email | Password
+                        </p>
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div>
+                        <h1>Input field example</h1>
+                        <div class="float-group">
+                            <input type="text" class="float-style" id="ex1" />
+                            <label for="ex1">Input Example</label>
+                        </div>
+                        <div class="code-chunk">
+                            &lt;div class="float-group"&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" class="float-style" id="ex1" /&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="ex1"&gt;Input Example&lt;/label&gt;<br />
+                            &lt;/div&gt;
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="input">
+                <div class="number">2</div>
+                <div class="tan-box">
+                    <div>
+                        <p>
+                            Copy the code in the pink box for textareas
+                        </p>
+                        <span>•</span>
+                        <p>
+                            Rows Optional
+                        </p>
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div>
+                        <h1>Textarea example</h1>
+                        <div class="float-group textarea">
+                            <textarea class="float-style" id="ex2" rows="3"></textarea>
+                            <label for="ex2">Textarea Example</label>
+                        </div>
+                        <div class="code-chunk">
+                            &lt;div class="float-group textarea"&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea class="float-style" id="ex2" rows="3"&gt;&lt;/textarea&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="ex2"&gt;Textarea Example&lt;/label&gt;<br />
+                            &lt;/div&gt;
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="input">
+                <div class="number">3</div>
+                <div class="tan-box">
+                    <div>
+                        <p>
+                            Copy the code in the pink box for dropdowns
+                        </p>
+                        <span>•</span>
+                        <p>
+                            Label on top
+                        </p>
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div>
+                        <h1>Select example</h1>
+                        <div class="float-group select">
+                            <label for="ex3">Select Example</label>
+                            <select class="float-style" id="ex3">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                        </div>
+                        <div class="code-chunk">
+                            &lt;div class="float-group select"&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="ex3"&gt;Select Example&lt;/label&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;select class="float-style" id="ex3"&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;Option 1&lt;/option&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;Option 2&lt;/option&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;Option 3&lt;/option&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;<br />
+                            &lt;/div&gt;
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="input">
+                <div class="number">4</div>
+                <div class="tan-box">
+                    <div>
+                        <p>
+                            Copy the code in the pink box for option fields
+                        </p>
+                        <span>•</span>
+                        <p>
+                            Don't forget the label 'for' attribute
+                        </p>
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div>
+                        <h1>Radio example</h1>
+                        <div class="float-group option">
+                            <p>Is this Awesome</p>
+                            <input type="radio" name="default" id="yes">
+                            <label for="yes">Yes</label>
+                            <input type="radio" name="default" id="yes2">
+                            <label for="yes2">Definitely</label>
+                            <input type="radio" name="default" id="yes3">
+                            <label for="yes3">YUP!</label>
+                        </div>
+                        <div class="code-chunk">
+                            &lt;div class="float-group option"&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Is this Awesome&lt;/p&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" name="default" id="yes"&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="yes"&gt;Yes&lt;/label&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" name="default" id="yes2"&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="yes2"&gt;Definitely&lt;/label&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" name="default" id="yes3"&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="yes3"&gt;YUP!&lt;/label&gt;<br />
+                            &lt;/div&gt;
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!-- Bootstrap -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
