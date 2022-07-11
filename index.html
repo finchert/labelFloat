@@ -18,6 +18,7 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather|Muli:300,500&display=swap" rel="stylesheet">
 
     	<link rel="stylesheet" href="css/base.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="css/inputStyles.css" type="text/css" media="screen" />
 
     </head>
 
@@ -40,14 +41,18 @@
                     <div>
                         <h1>Input field example</h1>
                         <div class="float-group">
-                            <input type="text" class="float-style" id="ex1" />
+                            <input type="text" class="float-style" id="ex1" onfocus="floatFocus(this)" onblur="floatBlur(this)" />
                             <label for="ex1">Input Example</label>
                         </div>
                         <div class="code-chunk">
                             &lt;div class="float-group"&gt;<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" class="float-style" id="ex1" /&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" class="float-style" id="ex1" onfocus="floatFocus(this)" onblur="floatBlur(this)" /&gt;<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="ex1"&gt;Input Example&lt;/label&gt;<br />
                             &lt;/div&gt;
+                        </div>
+                        <div class="float-group" style="margin-top: 20px">
+                            <input type="text" class="float-style active" id="ex2" value="Disabled Value" disabled />
+                            <label for="ex2">Disabled Input Example</label>
                         </div>
                     </div>
                 </div>
@@ -70,12 +75,12 @@
                     <div>
                         <h1>Textarea example</h1>
                         <div class="float-group textarea">
-                            <textarea class="float-style" id="ex2" rows="3"></textarea>
+                            <textarea class="float-style" id="ex2" rows="3" onfocus="floatFocus(this)" onblur="floatBlur(this)"></textarea>
                             <label for="ex2">Textarea Example</label>
                         </div>
                         <div class="code-chunk">
                             &lt;div class="float-group textarea"&gt;<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea class="float-style" id="ex2" rows="3"&gt;&lt;/textarea&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea class="float-style" id="ex2" rows="3"  onfocus="floatFocus(this)" onblur="floatBlur(this)"&gt;&lt;/textarea&gt;<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="ex2"&gt;Textarea Example&lt;/label&gt;<br />
                             &lt;/div&gt;
                         </div>
@@ -160,13 +165,204 @@
                     </div>
                 </div>
             </section>
-        </div>
 
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <!-- Bootstrap -->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+            <section class="media">
+                <div class="tan-box">
+                    <div>
+                        <p>
+                            <button class="tab-button" id="css-toggle">CSS</button>
+                            <button class="tab-button" id="js-toggle">JS</button>
+                            <a href="" class="download-button">Download Zip</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="tab-box content-box">
+                    <div>
+                        <h1>Copy Code</h1>
+                        <div class="tab-row">
+                        </div>
+                        <div class="tab-section">
+                            <div class="code-chunk active" id="css-code">
+                                :root {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;--input-text-color: #2e2e2e;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;--label-text-color: #707070;<br /><br />
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;--disabled-input-text-color: #909090;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;--disabled-label-text-color: #aaa;<br /><br />
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;--input-border-color: #e3e3e3;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;--input-border-color-focus: #707070;<br />
+                                }<br />
+                                .float-group {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;margin-bottom: 10px;<br />
+                                }<br />
+                                .float-group .float-style { width: 100% }<br />
+                                .float-group input[type=text].float-style,<br />
+                                .float-group input[type=number].float-style,<br />
+                                .float-group input[type=email].float-style,<br />
+                                .float-group input[type=password].float-style {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;height: 45px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;background: white;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid var(--input-border-color);<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;left: 0;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;top: 0;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;z-index: 1;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;font-size: 14px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;color: var(--input-text-color);<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;font-weight: 500;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;outline: none;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;padding: 21px 10px 5px 5px;<br />
+                                }<br />
+                                .float-group input[type=text].float-style:focus,<br />
+                                .float-group input[type=number].float-style:focus,<br />
+                                .float-group input[type=email].float-style:focus,<br />
+                                .float-group input[type=password].float-style:focus,<br />
+                                .float-group textarea.float-style:focus,<br />
+                                .float-group select.float-style:focus {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid var(--input-border-color-focus);<br />
+                                }<br />
+                                .float-group input[type=text].float-style.active + label,<br />
+                                .float-group input[type=number].float-style.active + label,<br />
+                                .float-group input[type=email].float-style.active + label,<br />
+                                .float-group input[type=password].float-style.active + label,<br />
+                                .float-group textarea.float-style.active + label {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;top: 6px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;left: 6px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;font-size: 11px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;z-index: 2;<br />
+                                }<br />
+                                .float-group input[type=text]:disabled {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;background: #F3F3F4;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;border-color: #F3F3F4;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;color: var(--disabled-input-text-color);<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;cursor: not-allowed;<br />
+                                }<br />
+                                .float-group input[type=text]:disabled + label {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;color: var(--disabled-label-text-color);<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;cursor: not-allowed;<br />
+                                }<br />
+                                .float-group label {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;top: 14px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;left: 6px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;font-size: 14px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;color: var(--label-text-color);<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;z-index: 2;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;-webkit-transition: all 0.18s ease;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;-moz-transition: all 0.18s ease;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;-o-transition: all 0.18s ease;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;transition: all 0.18s ease;<br />
+                                }<br />
+                                .float-group button.search {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;border: 0;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;background: transparent;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;box-shadow: none;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;right: 7px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;top: 11px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;color: #4E5255;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;z-index: 3;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;padding: 0;<br />
+                                }<br />
+                                .float-group.textarea label {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br />
+                                }<br />
+                                .float-group.textarea textarea {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid var(--input-border-color);<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;outline: none;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;padding: 21px 6px 6px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;color: var(--input-text-color);<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;font-weight: 500;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;font-size: 14px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;top: 0;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br />
+                                }<br />
+                                .float-group.textarea textarea:disabled {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;background: #F3F3F4;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;border-color: #F3F3F4;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;color: #95989A;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;cursor: not-allowed;<br />
+                                }<br />
+                                .float-group.option {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;padding-bottom: 2px;<br />
+                                }<br />
+                                .float-group.option input[type=radio],<br />
+                                .float-group.option input[type=checkbox] {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;top: 2px;<br />
+                                }<br />
+                                .float-group.option p {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;margin-bottom: 8px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;font-size: 16px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;color: var(--label-text-color);<br />
+                                }<br />
+                                .float-group.option label {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;color: var(--label-text-color);<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;left: 0;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;top: 1px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;margin-right: 15px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;font-size: 14px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;display: inline-block;<br />
+                                }<br />
+                                .float-group.select label {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;font-size: 12px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;line-height: 14px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;margin-bottom: 3px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;display: block;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;left: 0;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;top: 0;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;color: var(--label-text-color);<br />
+                                }<br />
+                                .float-group.select .float-style {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;height: 28px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;-webkit-appearance: none;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;-moz-appearance: none;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;appearance: none;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 0;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid var(--input-border-color);<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;font-size: 14px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;color: var(--input-text-color);<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;padding: 0 8px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;outline: none;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;background: url('https://cdn.augeobiz.com/static/storefront/general/select.svg') white no-repeat top 6px right 5px;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;background-size: 14px 14px;<br />
+                                }
+                            </div>
+                            <div class="code-chunk" id="js-code">
+                                var floats = document.querySelectorAll('.float-style'), i;<br /><br />
+
+                                document.addEventListener('DOMContentLoaded', function () {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;for (i = 0; i < floats.length; ++i) {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(floats[i].value);<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(floats[i].value != '') {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;floatFocus(floats[i]);<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                                }, false);<br /><br />
+
+                                function floatBlur(input) {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;if(input.value == '') {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input.classList.remove('active');<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                                }<br /><br />
+
+                                function floatFocus(input) {<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;input.classList.add('active');<br />
+                                }<br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
         <script src="js/main.js"></script>
     </body>
